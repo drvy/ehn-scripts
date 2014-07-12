@@ -1,5 +1,3 @@
-if(isGuest()){ insertMessage(); }
-
 function mostrarImagenes(){
 	var css = '.post img {display:inline;}';
 	var head = document.head || document.getElementsByTagName('head')[0];
@@ -9,12 +7,6 @@ function mostrarImagenes(){
 	else { style.appendChild(document.createTextNode(css)); }
 	head.appendChild(style);
 	document.getElementById('toggleImg').style.display='none';
-};
-
-function isGuest(){
-	if(typeof document.getElementsByClassName!=='function'){return false;}
-	var publi = document.getElementsByClassName('publi_sponsor');
-	if(publi.length>0){return true;}else{return false;}
 };
 
 function insertMessage(){
@@ -28,3 +20,5 @@ function insertMessage(){
 	body = document.body || document.getElementsByTagName('body')[0];
 	body.appendChild(div);
 };
+
+insertMessage();

@@ -1,5 +1,3 @@
-if(isGuest()){ if(window.jQuery===undefined){ loadJQ(function(){ toggleImagenes(); }); } else { toggleImagenes(); } }
-
 function toggleImagenes(){
 	jQuery(function(){
 		jQuery('.post img').wrap('<div class="imageContainer">');
@@ -8,12 +6,6 @@ function toggleImagenes(){
 			.prepend('<input type="button" value="Haz click para ver la imagen" />')
 			.on('click',function(){ jQuery(this).children('img').css('display','inline').prev('input').css('display','none'); });
 	});
-};
-
-function isGuest(){
-	if(typeof document.getElementsByClassName!=='function'){return false;}
-	var publi = document.getElementsByClassName('publi_sponsor');
-	if(publi.length>0){return true;}else{return false;}
 };
 
 function loadJQ(callback){
@@ -27,3 +19,5 @@ function loadJQ(callback){
 	script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js';
 	document.getElementsByTagName('body')[0].appendChild(script);
 };
+
+if(window.jQuery===undefined){ loadJQ(function(){ toggleImagenes(); }); } else { toggleImagenes(); }
