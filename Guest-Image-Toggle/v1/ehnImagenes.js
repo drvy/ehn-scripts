@@ -8,7 +8,12 @@ function toggleImagenes(){
 		jQuery('.imageContainer')
 			.css({'display':'inline','margin':'2px','padding':'2px'})
 			.prepend('<input type="button" value="Haz click para ver la imagen" />')
-			.on('click',function(){ jQuery(this).children('img').css('display','inline').prev('input').css('display','none'); });
+			.on('click',function(event){
+				event.preventDefault();
+				jQuery(this).children('img').css('display','inline').prev('input').css('display','none');
+				jQuery(this).unbind('click');
+				return false;
+			});
 	});
 };
 
