@@ -1,12 +1,12 @@
 if(isGuest()){ if(window.jQuery===undefined){ loadJQ(function(){ toggleImagenes(); }); } else { toggleImagenes(); } }
 
 function toggleImagenes(){
-	$(function(){
-		$('.post img').wrap('<div class="imageContainer">');
-		$('.imageContainer')
+	jQuery(function(){
+		jQuery('.post img').wrap('<div class="imageContainer">');
+		jQuery('.imageContainer')
 			.css({'display':'inline','margin':'2px','padding':'2px'})
 			.prepend('<input type="button" value="Haz click para ver la imagen" />')
-			.on('click',function(){ $(this).children('img').css('display','inline').prev('input').css('display','none'); });
+			.on('click',function(){ jQuery(this).children('img').css('display','inline').prev('input').css('display','none'); });
 	});
 };
 
