@@ -1,6 +1,10 @@
 function toggleImagenes(){
 	jQuery(function(){
-		jQuery('.post img').wrap('<div class="imageContainer">');
+		jQuery('.post img').each(function(index){
+			var timg = jQuery(this);
+			if(timg.attr('src').indexOf('//foro.elhacker.net/Smileys/')> -1){timg.css('display','inline');}
+			else{timg.wrap('<div class="imageContainer">');}
+		});
 		jQuery('.imageContainer')
 			.css({'display':'inline','margin':'2px','padding':'2px'})
 			.prepend('<input type="button" value="Haz click para ver la imagen" />')
