@@ -2,7 +2,7 @@ function toggleImagenes(){
 	jQuery(function(){
 		jQuery('.post img').each(function(index){
 			var timg = jQuery(this);
-			if(timg.attr('src').indexOf('//foro.elhacker.net/Smileys/')> -1){timg.css('display','inline');}
+			if(timg.attr('src').indexOf('://foro.elhacker.net/Smileys/')> -1){timg.css('display','inline');}
 			else{timg.wrap('<div class="imageContainer">');}
 		});
 		jQuery('.imageContainer')
