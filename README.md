@@ -1,7 +1,8 @@
-# ehn_scripts
+Guest-Image-Toggle V1
+===========
 
-Scripts/proyectos para [elhacker.NET](http://foro.elhacker.net).
+Script para permitir a los visitantes del foro, ver las imagenes de los posts aunque no esten registrados.
 
-| Script | Descripcion |
-|--------|--------|
-| Guest Image Toggle | Script para mostrar un boton "*haz click para ver la imagen*" para los visitantes en el foro debido a ciertos problemas con AdSense.|
+Esta version usa jQuery para wrapear las imagenes ya que el foro simplmenete inserta el tag <img> sin ningun pariente.
+- Comprueba si jQuery ya ha sido cargado, en caso de que no, lo intenta cargar.
+- Llama a toggleImagenes(); que parsea todas las imagenes dentro de los posts, y añade un boton para mostrar cada una de ellas.
